@@ -30,7 +30,7 @@ As defined in ```defaults/main.yml```:
 | *dynatrace_wsagent_role_name*                 | dynatrace.Dynatrace-WebServer-Agent              | The actual name of this role in an [Ansible Playbook's](http://docs.ansible.com/playbooks.html) ```roles``` directory. |
 | *dynatrace_wsagent_user*                      | dynatrace                                        | The actual name of user the agent install directory is owned by as well as the user it runs as. |
 | *dynatrace_wsagent_group*                     | dynatrace                                        | The default group the user belongs to. |
-| *dynatrace_wsagent_log_location*              | undefined                                        | The location you wish to set in the dtwsagent.ini file. By default this is not define which will cause the ini file to use its default of *$dynatrace_wsagent_linux_install_dir*/dynatrace/log |
+| *dynatrace_wsagent_log_location*              | undefined                                        | The location you wish to set in the dtwsagent.ini file for LogfilePath. By default this is not defined which will cause the ini file to use its default of *$dynatrace_wsagent_linux_install_dir*/dynatrace/log |
 
 ## Example Playbook
 
