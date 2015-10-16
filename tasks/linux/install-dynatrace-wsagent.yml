@@ -72,13 +72,13 @@
   lineinfile: dest={{ dynatrace_wsagent_linux_install_dir }}/dynatrace/agent/conf/dtwsagent.ini regexp='^Server .*' line='Server {{ dynatrace_wsagent_collector_hostname }}:{{ dynatrace_wsagent_collector_port }}'
   sudo: yes
 
-- name: Create log directory in var
+- name: Create log directory in {{ dynatrace_wsagent_log_location }} 
   file: path={{ dynatrace_wsagent_log_location }} state=directory owner={{ dynatrace_wsagent_user }} group={{ dynatrace_wsagent_group }}
   sudo: yes
   when: dynatrace_wsagent_log_location is defined
 
 - name: Configure the Dynatrace log location in the Dynatrace Web Server Agent's 'dtwsagent.ini' file
-  lineinfile: dest={{ dynatrace_wsagent_linux_install_dir }}/dynatrace/agent/conf/dtwsagent.ini regexp='^#LogfilePath .*' line='LogfilePath {{ dynatrace_wsagent_log_location }}'
+  lineinfile: dest={{ dynatrace_wsagent_linux_install_dir }}/dynatrace/agent/conf/dtwsagent.ini regexp='^#?LogfilePath .*' line='LogfilePath {{ dynatrace_wsagent_log_location }}'
   sudo: yes
   when: dynatrace_wsagent_log_location is defined
 
