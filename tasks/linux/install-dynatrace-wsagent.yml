@@ -11,7 +11,7 @@
     path: "{{ dynatrace_wsagent_linux_install_dir }}"
     owner: "{{ dynatrace_wsagent_owner }}"
     group: "{{ dynatrace_wsagent_group }}"
-  when: dynatrace_wsagent_create_install_dir_result | changed
+  when: dynatrace_wsagent_create_install_dir_result is changed
   become: yes
 
 - name: "Copy the Dynatrace installer to {{ dynatrace_wsagent_linux_install_dir }} if the installer is provided locally"
